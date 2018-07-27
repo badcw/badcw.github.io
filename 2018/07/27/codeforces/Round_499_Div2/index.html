@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon-32x32-next.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Codeforces Round #499 (Div. 2) 总结： 二分专场，巨多二分题    # Name       A Stagesstandard input/output1 s, 256 MB    x4069   B Planning The Expeditionstandard input/output1 s, 256 MB    x3354   C Flystandard inp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Badcw">
+<meta property="og:url" content="http://yoursite.com/2018/07/27/codeforces/Round_499_Div2/index.html">
+<meta property="og:site_name" content="Badcw">
+<meta property="og:description" content="Codeforces Round #499 (Div. 2) 总结： 二分专场，巨多二分题    # Name       A Stagesstandard input/output1 s, 256 MB    x4069   B Planning The Expeditionstandard input/output1 s, 256 MB    x3354   C Flystandard inp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png">
+<meta property="og:image" content="http://st.codeforces.com/s/94148/images/icons/user.png">
+<meta property="og:updated_time" content="2018-07-27T06:18:40.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Badcw">
+<meta name="twitter:description" content="Codeforces Round #499 (Div. 2) 总结： 二分专场，巨多二分题    # Name       A Stagesstandard input/output1 s, 256 MB    x4069   B Planning The Expeditionstandard input/output1 s, 256 MB    x3354   C Flystandard inp">
+<meta name="twitter:image" content="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/27/codeforces/Round_499_Div2/"/>
+
+
+
+
+
+  <title> | Badcw</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Badcw</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎来到本站ε-(•́ω•̀๑)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/codeforces/Round_499_Div2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Badcw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Badcw">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T14:20:21+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-27T14:18:40+08:00">
+                2018-07-27
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://codeforces.com/contest/1011" target="_blank" rel="noopener">Codeforces Round #499 (Div. 2)</a></p>
+<p>总结： 二分专场，巨多二分题</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/A" target="_blank" rel="noopener">A</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/A" target="_blank" rel="noopener">Stages</a>standard input/output1 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/A" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/A" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x4069</a></td>
+</tr>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/B" target="_blank" rel="noopener">B</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/B" target="_blank" rel="noopener">Planning The Expedition</a>standard input/output1 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/B" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/B" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x3354</a></td>
+</tr>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/C" target="_blank" rel="noopener">C</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/C" target="_blank" rel="noopener">Fly</a>standard input/output1 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/C" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/C" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x2073</a></td>
+</tr>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/D" target="_blank" rel="noopener">D</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/D" target="_blank" rel="noopener">Rocket</a>standard input/output1 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/D" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/D" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x912</a></td>
+</tr>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/E" target="_blank" rel="noopener">E</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/E" target="_blank" rel="noopener">Border</a>standard input/output1 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/E" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/E" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x644</a></td>
+</tr>
+<tr>
+<td><a href="http://codeforces.com/contest/1011/problem/F" target="_blank" rel="noopener">F</a></td>
+<td><a href="http://codeforces.com/contest/1011/problem/F" target="_blank" rel="noopener">Mars rover</a>standard input/output5 s, 256 MB</td>
+<td><a href="http://codeforces.com/contest/1011/submit/F" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/submit-22x22.png" alt="Submit"></a> <img src="http://st.codeforces.com/s/94148/images/icons/star_gray_16.png" alt="Add to favourites"></td>
+<td><a href="http://codeforces.com/contest/1011/status/F" target="_blank" rel="noopener"><img src="http://st.codeforces.com/s/94148/images/icons/user.png" alt="img"> x156</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="A题-Stages"><a href="#A题-Stages" class="headerlink" title="A题 Stages"></a>A题 Stages</h2><p>题意：给一个长为n的串，从其中取出k个字符排成一列，要求每个字符比前一个字符至少多2（ascii码），比如c后面的字符起码为e。不能生成这样的串就输出-1，否则按a=1，b=2 …求生成串的和</p>
+<p>题解：emmmm排序从前往后扫一遍应该可以了</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="keyword">char</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, a);</span><br><span class="line">    sort(a, a + n);</span><br><span class="line">    <span class="keyword">int</span> res = a[<span class="number">0</span>] - <span class="string">'a'</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (flag == k) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span> (temp + <span class="number">1</span> &lt; a[i]) res += a[i] - <span class="string">'a'</span> + <span class="number">1</span>, temp = a[i], flag++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag &lt; k) <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一定要有良好的代码习惯，考虑边界值之类的，这种前后有关联的扫描操作就应该处理完第一个数之后再写循环，挂fst的人还挺多</p>
+<h2 id="B题-Planning-The-Expedition"><a href="#B题-Planning-The-Expedition" class="headerlink" title="B题 Planning The Expedition"></a>B题 Planning The Expedition</h2><p>题意：给m个物品，有n个人，每人每天要消耗一个物品，每个人只能消耗一种物品，求最多可以支撑多少天，输入为n，m，m件物品的种类编号</p>
+<p>题解：扫描一遍记录所有种类的个数，数据范围奇小直接暴力也能写，但是注意能支撑x天说明也能支撑1~x天，所以是可以二分解的，把种类个数排序，每次从最大的开始扫，扫到0直接break，如果最后结果大于等于人数就往右二分，否则往左。<br>$$<br>\sum{p_i/ans} \ge n<br>$$<br>代码：（没写二分真是不好意思，有点懒，不过n写成i wa了一发，pos忘记改又wa一发不然上1700了）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    sort(a, a + m);</span><br><span class="line">    <span class="keyword">int</span> temp = a[<span class="number">0</span>];</span><br><span class="line">    p.push_back(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] == temp) &#123;</span><br><span class="line">            p[p.size() - <span class="number">1</span>]++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            temp = a[i];</span><br><span class="line">            p.push_back(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">//是不是很完美的扫描操作</span></span><br><span class="line">    sort(p.begin(), p.end());</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = m / n; i &gt; <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = p.size() - <span class="number">1</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p[j] &lt; i) <span class="keyword">break</span>;</span><br><span class="line">            temp += p[j] / i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (temp &gt;= n) &#123;</span><br><span class="line">            res = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C题-Fly"><a href="#C题-Fly" class="headerlink" title="C题 Fly"></a>C题 Fly</h2><p>题意：从地球到火星，经过n个星球，路线从1-2-3-…-n-1，每次起飞降落都消耗燃料，求最初需要多少燃料，消耗燃料的质量为:<br>$$<br>\delta m = { m_{货物} + m_{燃料} \over a_i }<br>$$<br>题解：二分一下求解即可，听说dfs可以写但是感觉不好想而且说实话这个路线不太好处理所以直接写二分答案了，题目给出提示最初燃料质量不会超过1e9，注意点细节即可，详见代码注释</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1005</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[maxn], b[maxn];</span><br><span class="line"><span class="keyword">double</span> m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%lf"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[n]); <span class="comment">//细节先读b[n]，原因是它最后一步是降落在地球，这样循环里面就不用特判</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[i]);</span><br><span class="line">    <span class="keyword">double</span> l = <span class="number">0</span>, r = <span class="number">1e9</span>+<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">double</span> mid, temp;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; <span class="number">1e-8</span>) &#123; <span class="comment">//1e-10居然tle了有点不敢相信，最后1e-8只跑了30ms</span></span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            temp = (m + mid) / a[i];</span><br><span class="line">            <span class="keyword">if</span> (mid - temp &gt; <span class="number">1e-10</span>) mid -= temp; <span class="comment">//其实temp变量是个细节去常数，自己理解一下</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            temp = (m + mid) / b[i];</span><br><span class="line">            <span class="keyword">if</span> (mid - temp &gt; <span class="number">1e-10</span>) mid -= temp;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>) l = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span> r = (l + r) / <span class="number">2</span>, res = <span class="number">1</span>; <span class="comment">//res也可以直接记录r的值，这样记得把res初始化为-1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (res == <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%.10f\n"</span>, l);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D题-Rocket"><a href="#D题-Rocket" class="headerlink" title="D题 Rocket"></a>D题 Rocket</h2><p>题意：交互题，emmmmm，题巨长比赛中没有看懂，简单的猜数问题，你知道一个数一定小于等于m，然后机器会回答你的猜测，你猜x&lt;res机器输出（需要你读入）-1，x==res输出0，x&gt;res输出1，但是机器说实话是周期性的，就是说以n为周期，第x询问中机器会像x % n那次一样回答你，如果x % n那次是正确回答，那么x也是，反之亦然，错误回答的定义是输出正确回答的相反数，en cslnb</p>
+<p>题解：emmmm真的是没有写交互题的经验根本无法动手，反正又是二分，为了知道机器一个周期内回答你的是正确还是错误，可以先询问n次1，因为x一定是大于等于1的（等于直接结束程序就好），回答1就说明为真否则为假，然后后面再二分的去询问，直到回答为0，二分logn复杂度60次之内绝对在1-1e6出结果了</p>
+<p>注意事项：交互题是指，你手动输出询问，然后评测机端会返回值，你用读入接受那个返回的值，然后处理，直到得出一个结果，本题得出结果就是机器端返回0的时候</p>
+<p>代码：（cslnb）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, x; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        a.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, x;; (++i) %= n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; mid &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[i] == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">-1</span>)</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是有一种nb的操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">33</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m, n, l = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;m, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, l);</span><br><span class="line">        fflush(<span class="built_in">stdout</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        <span class="keyword">if</span> (a[i] == <span class="number">0</span>) <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        l++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> r = m, mid, x, flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; ; ++i) &#123;</span><br><span class="line">        flag++;</span><br><span class="line">        <span class="keyword">if</span> (flag &gt; n) flag = <span class="number">1</span>;</span><br><span class="line">        mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, mid);</span><br><span class="line">        fflush(<span class="built_in">stdout</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">0</span>) <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        x *= a[flag];</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">1</span>) l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码很nb看了一会才知道为什么是对的</p>
+<p>首先它不像蔡队那样前n次询问1来判断，实际上你把l区间不断暴力向右枚举，得到答案0当然直接输出，但是在此之前如果没有0，说明<strong>1-l都比答案小</strong>，然后你在前n次询问不仅把机器正确的周期性得到了还缩短了区间，其他的就是x*a[flag]比蔡队的代码优美一点。</p>
+<h2 id="E题-Border"><a href="#E题-Border" class="headerlink" title="E题 Border"></a>E题 Border</h2><p>题意：给n个10进制数，求他们任意求和在k进制下的末位可以为多少，任意求和可以和自己求和，可以多次求和</p>
+<p>题解：<br>$$<br>res = gcd(k, a_1, a_2, a_3, … ,a_n) * x (x \in R)<br>$$<br>​    证明我当然是不会的，但是写出来就是对的，注意一点就是res==n时把它变成0加到首位，代码写丑了加了末位排了个序</p>
+<p>​    当然还是证明一下吧2333<br>$$<br>gcd(a, b) = ax_1 + by_1——————–1<br>$$<br>​    拓展欧几里得定理一定有解</p>
+<p>​    这题就相当于<br>$$<br>gcd(a, b) = (ax_2 + by_2) \% k——————–2<br>$$<br>​    由于只能做加法，x，y必须为正数</p>
+<p>​    将1式带入2式得<br>$$<br>ax_1+by_1=(ax_2+by_2)\%k<br>$$</p>
+<p>$$<br>ax_1+by_1=ax_2+by_2 - k * temp<br>$$</p>
+<p>$$<br>k<em>temp=a</em>(x_2-x_1)+b*(y_2-y_1)<br>$$</p>
+<p>​    一定也是有解的，所以也就是说2式一定有解，然后还有个结论是a在k进制下乘上任意大于0的倍数（模k），能产生最小的数一定是gcd(a,k)，所以把a1~an全部求gcd得到a，然后按结论可知得解（ai都是a的倍数所以也不能产生新的解，全都是a的倍数）。然后注意一点就是k是a的倍数的话0也是解。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">ll n, k;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;ll&gt;res;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a[i]), a[i] %= k;</span><br><span class="line">    ll temp = k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        temp = gcd(a[i], temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (temp == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d%c"</span>, i, i == k - <span class="number">1</span> ? <span class="string">'\n'</span> : <span class="string">' '</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, k / temp);</span><br><span class="line">        ll gg = temp;</span><br><span class="line">        <span class="keyword">while</span> (gg &lt;= k) res.push_back(gg % k), gg += temp;</span><br><span class="line">        sort(res.begin(), res.end());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.size(); ++i) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld%c"</span>, res[i], i == res.size() - <span class="number">1</span>? <span class="string">'\n'</span> : <span class="string">' '</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="F题-Mars-rover"><a href="#F题-Mars-rover" class="headerlink" title="F题 Mars rover"></a>F题 Mars rover</h2><p>题意：</p>
+<p>题解：有机会再补一下吧树形dp</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/25/oj_set/" rel="next" title="服务器搭建日志">
+                <i class="fa fa-chevron-left"></i> 服务器搭建日志
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Badcw" />
+            
+              <p class="site-author-name" itemprop="name">Badcw</p>
+              <p class="site-description motion-element" itemprop="description">哦豁</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A题-Stages"><span class="nav-text">A题 Stages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B题-Planning-The-Expedition"><span class="nav-text">B题 Planning The Expedition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C题-Fly"><span class="nav-text">C题 Fly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D题-Rocket"><span class="nav-text">D题 Rocket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E题-Border"><span class="nav-text">E题 Border</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F题-Mars-rover"><span class="nav-text">F题 Mars rover</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Badcw</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'f79533'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
